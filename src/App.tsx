@@ -16,7 +16,7 @@ import  {useState} from "react";
 
          }
 
-         newNumbers.sort((a, b) => a - b);
+         newNumbers.sort((a, b) => a - b)
 
          setNumbers(
              newNumbers
