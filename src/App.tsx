@@ -1,16 +1,22 @@
 
 import Numbers from './Numbers/Numbers';
 import './App.css'
-import {useState} from "react";
-
+import  {useState} from "react";
     const App = () => {
-     const [numbers,setNumbers] = useState(
-         [5, 11, 16, 23, 32]);
+
+     const [numbers,setNumbers] = useState<number[]>
+     ([ 5, 11, 16, 23, 32 ]);
 
      const getNewNumbers = () => {
-         setNumbers([
-
-         ])
+         const newNumbers: number[] = [];
+         while (newNumbers.length < 5) {
+             const randomNumbers =  Math.floor(Math.random() * 32) + 5;
+             console.log(randomNumbers)
+             newNumbers.push(randomNumbers);
+         }
+         setNumbers(
+             newNumbers
+         );
      }
 
         return (
@@ -22,7 +28,10 @@ import {useState} from "react";
                 </div>
 
                 <div className="block-numbers">
-                    <Numbers numbers={numbers[0]}> </Numbers>
+                    {numbers.map((number,index) => (
+                        <Numbers key={index} numbers={number}> </Numbers>
+                    ))}
+
                 </div>
 
             </div>
