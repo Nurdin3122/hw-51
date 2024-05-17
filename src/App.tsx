@@ -10,7 +10,6 @@ import  {useState} from "react";
          const newNumbers: number[] = [];
          while (newNumbers.length < 5) {
                  const randomNumbers =  Math.floor(Math.random() * 32) + 5;
-                 console.log(randomNumbers)
              if (!newNumbers.includes(randomNumbers)) {
                  newNumbers.push(randomNumbers);
              }
