@@ -13,7 +13,11 @@ import  {useState} from "react";
              const randomNumbers =  Math.floor(Math.random() * 32) + 5;
              console.log(randomNumbers)
              newNumbers.push(randomNumbers);
+
          }
+
+         newNumbers.sort((a, b) => a - b);
+
          setNumbers(
              newNumbers
          );
