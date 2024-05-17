@@ -1,4 +1,3 @@
-
 import Numbers from './Numbers/Numbers';
 import './App.css'
 import  {useState} from "react";
@@ -10,21 +9,17 @@ import  {useState} from "react";
      const getNewNumbers = () => {
          const newNumbers: number[] = [];
          while (newNumbers.length < 5) {
-             const randomNumbers =  Math.floor(Math.random() * 32) + 5;
-             console.log(randomNumbers)
-             newNumbers.push(randomNumbers);
-
+                 const randomNumbers =  Math.floor(Math.random() * 32) + 5;
+                 console.log(randomNumbers)
+             if (!newNumbers.includes(randomNumbers)) {
+                 newNumbers.push(randomNumbers);
+             }
          }
-
-         newNumbers.sort((a, b) => a - b)
-
-         setNumbers(
-             newNumbers
-         );
+         newNumbers.sort((a, b) => a - b);
+         setNumbers(newNumbers);
      }
 
         return (
-
             <div className="App">
 
                 <div className="btn-block">
@@ -37,9 +32,7 @@ import  {useState} from "react";
                     ))}
 
                 </div>
-
             </div>
-
         );
     };
 export default App
